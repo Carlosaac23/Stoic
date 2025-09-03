@@ -1,102 +1,251 @@
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
+import Header from '@/components/Header';
+import { Scroll, Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardTitle } from '@/components/ui/card';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className='min-h-screen font-serif'>
+      {/* Header */}
+      <Header />
+      {/* Hero Section */}
+      <section className='relative border-b border-stone-200 py-20 dark:border-stone-700'>
+        <div className='absolute inset-0 z-0'>
+          <Image
+            src='/temple.webp'
+            alt='Templo griego antiguo con columnas dóricas'
+            fill
+            sizes='(max-width: 768px)'
+            className='object-cover object-center brightness-[0.85] dark:brightness-[0.6]'
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className='relative z-10 container mx-auto px-4 text-center'>
+          <Card className='bg-background/90 mx-auto max-w-2xl border-stone-200 backdrop-blur-sm dark:border-stone-700'>
+            <CardContent className='p-10'>
+              <h1 className='mb-6 text-4xl font-medium tracking-wide md:text-5xl'>
+                LA VIRTUD ES EL ÚNICO BIEN
+              </h1>
+              <p className='text-muted-foreground mb-8 text-xl'>
+                "No son las cosas las que perturban a los hombres, sino las
+                opiniones que tienen sobre ellas."
+              </p>
+              <p className='text-muted-foreground italic'>— Epicteto</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Principles Section */}
+      <section className='py-16'>
+        <div className='container mx-auto px-4'>
+          <h2 className='mb-12 text-center text-3xl font-medium tracking-wide'>
+            PRINCIPIOS ESTOICOS
+          </h2>
+
+          <div className='grid gap-8 md:grid-cols-3'>
+            {/* Column 1 */}
+            <Card className='overflow-hidden border-stone-200 dark:border-stone-700'>
+              <div className='relative h-48'>
+                <Image
+                  src='/wisdom.webp'
+                  alt='Busto de filósofo griego representando la sabiduría'
+                  fill
+                  sizes='(max-width: 768px)'
+                  className='object-cover object-center dark:brightness-[0.8]'
+                />
+              </div>
+              <CardContent className='flex flex-col items-center p-8 text-center'>
+                <div className='border-primary mb-6 h-16 w-16 border-t-4'></div>
+                <CardTitle className='mb-4 text-xl font-medium tracking-wide'>
+                  SABIDURÍA
+                </CardTitle>
+                <p className='text-muted-foreground'>
+                  La sabiduría es el conocimiento de lo que es bueno, malo e
+                  indiferente. Es la capacidad de distinguir entre lo que
+                  podemos controlar y lo que no.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Column 2 */}
+            <Card className='overflow-hidden border-stone-200 dark:border-stone-700'>
+              <div className='relative h-48'>
+                <Image
+                  src='/temperance.webp'
+                  alt='Estatua griega representando la templanza y moderación'
+                  fill
+                  sizes='(max-width: 768px)'
+                  className='vobject-cover object-center dark:brightness-[0.8]'
+                />
+              </div>
+              <CardContent className='flex flex-col items-center p-8 text-center'>
+                <div className='border-primary mb-6 h-16 w-16 border-t-4'></div>
+                <CardTitle className='mb-4 text-xl font-medium tracking-wide'>
+                  TEMPLANZA
+                </CardTitle>
+                <p className='text-muted-foreground'>
+                  La templanza es la moderación y el autocontrol. Es la
+                  capacidad de actuar con mesura y evitar los excesos en todas
+                  las áreas de la vida.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Column 3 */}
+            <Card className='overflow-hidden border-stone-200 dark:border-stone-700'>
+              <div className='relative h-48'>
+                <Image
+                  src='/justice.webp'
+                  alt='Balanza de la justicia en estilo griego antiguo'
+                  fill
+                  sizes='(max-width: 768px)'
+                  className='object-cover object-center dark:brightness-[0.8]'
+                />
+              </div>
+              <CardContent className='flex flex-col items-center p-8 text-center'>
+                <div className='border-primary mb-6 h-16 w-16 border-t-4'></div>
+                <CardTitle className='mb-4 text-xl font-medium tracking-wide'>
+                  JUSTICIA
+                </CardTitle>
+                <p className='text-muted-foreground'>
+                  La justicia es tratar a todos con equidad y respeto. Es
+                  reconocer nuestra conexión con toda la humanidad y actuar en
+                  consecuencia.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className='bg-secondary relative border-y border-stone-200 py-16 dark:border-stone-700'>
+        <div className='absolute right-0 bottom-0 h-full overflow-hidden opacity-20 dark:opacity-10'></div>
+        <div className='relative z-10 container mx-auto max-w-4xl px-4 text-center'>
+          <blockquote className='mb-6 text-2xl italic md:text-3xl'>
+            "No busques que los acontecimientos sucedan como tú quieres, sino
+            desea que sucedan como suceden, y serás feliz."
+          </blockquote>
+          <p className='text-muted-foreground text-xl'>— Marco Aurelio</p>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className='py-16'>
+        <div className='container mx-auto max-w-4xl px-4'>
+          <div className='flex flex-col gap-12 md:flex-row'>
+            <div className='md:w-1/2'>
+              <h2 className='mb-6 text-3xl font-medium tracking-wide'>
+                FILOSOFÍA ESTOICA
+              </h2>
+              <p className='text-muted-foreground mb-4'>
+                El estoicismo es una escuela de filosofía fundada en Atenas por
+                Zenón de Citio a principios del siglo III a.C. Su nombre deriva
+                del pórtico (stoa poikilê) donde Zenón enseñaba.
+              </p>
+              <p className='text-muted-foreground mb-4'>
+                Los estoicos enseñaban que las emociones destructivas resultan
+                de errores de juicio, y que un sabio, o persona con "virtud
+                moral perfecta", no sufriría tales emociones.
+              </p>
+              <p className='text-muted-foreground'>
+                Los estoicos se centraban en desarrollar la serenidad mental y
+                la fortaleza frente a la adversidad a través del cultivo de la
+                virtud y el razonamiento claro.
+              </p>
+            </div>
+            <div className='flex items-center justify-center md:w-1/2'>
+              <div className='relative aspect-square w-full max-w-sm'>
+                <Image
+                  src='/column.webp'
+                  alt='Columna griega con detalles arquitectónicos'
+                  fill
+                  className='object-contain dark:brightness-[0.9]'
+                />
+                <div className='absolute inset-0 flex items-center justify-center'>
+                  <div className='bg-background/80 dark:bg-background/70 border-primary border p-6 backdrop-blur-sm'>
+                    <div className='text-primary text-center'>
+                      <p className='mb-2 text-xl tracking-widest'>
+                        ΓΝΩΘΙ ΣΕΑΥΤΟΝ
+                      </p>
+                      <p className='italic'>Conócete a ti mismo</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className='bg-secondary border-t border-stone-200 py-16 dark:border-stone-700'>
+        <div className='container mx-auto max-w-2xl px-4 text-center'>
+          <h2 className='mb-6 text-3xl font-medium tracking-wide'>
+            EXPLORA MÁS
+          </h2>
+          <p className='text-muted-foreground mb-8'>
+            Descubre cómo los principios estoicos pueden transformar tu vida y
+            ayudarte a encontrar la tranquilidad en un mundo caótico.
+          </p>
+          <div className='flex flex-col justify-center gap-4 sm:flex-row'>
+            <Button className='bg-primary hover:bg-primary/90 text-primary-foreground'>
+              RECURSOS ESTOICOS
+            </Button>
+            <Button
+              variant='outline'
+              className='border-primary text-primary hover:bg-accent bg-transparent'
+            >
+              SUSCRÍBETE
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className='border-t border-stone-200 py-12 dark:border-stone-700'>
+        <div className='container mx-auto px-4'>
+          <div className='flex flex-col items-center justify-between px-4 md:flex-row'>
+            <div className='mb-6 flex items-center gap-2 md:mb-0'>
+              <Scroll className='h-5 w-5' />
+              <span className='text-lg font-medium tracking-wide'>
+                FILOSOFÍA ESTOICA
+              </span>
+            </div>
+            <nav className='mb-6 flex gap-6 md:mb-0'>
+              <Link
+                href='#'
+                className='hover:text-primary text-sm tracking-wide'
+              >
+                INICIO
+              </Link>
+              <Link
+                href='#'
+                className='hover:text-primary text-sm tracking-wide'
+              >
+                FILOSOFÍA
+              </Link>
+              <Link
+                href='#'
+                className='hover:text-primary text-sm tracking-wide'
+              >
+                PRINCIPIOS
+              </Link>
+              <Link
+                href='#'
+                className='hover:text-primary text-sm tracking-wide'
+              >
+                CONTACTO
+              </Link>
+            </nav>
+            <p className='text-muted-foreground text-sm'>
+              © {new Date().getFullYear()} Filosofía Estoica
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
