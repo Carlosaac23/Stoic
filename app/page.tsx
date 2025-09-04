@@ -1,42 +1,15 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import Header from '@/components/Header';
-import { Scroll, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
 
 export default function Home() {
   return (
     <div className='min-h-screen font-serif'>
-      {/* Header */}
       <Header />
-      {/* Hero Section */}
-      <section className='relative border-b border-stone-200 py-20 dark:border-stone-700'>
-        <div className='absolute inset-0 z-0'>
-          <Image
-            src='/temple.webp'
-            alt='Templo griego antiguo con columnas dóricas'
-            fill
-            sizes='(max-width: 768px)'
-            className='object-cover object-center brightness-[0.85] dark:brightness-[0.6]'
-            priority
-          />
-        </div>
-        <div className='relative z-10 container mx-auto px-4 text-center'>
-          <Card className='bg-background/90 mx-auto max-w-2xl border-stone-200 backdrop-blur-sm dark:border-stone-700'>
-            <CardContent className='p-10'>
-              <h1 className='mb-6 text-4xl font-medium tracking-wide md:text-5xl'>
-                LA VIRTUD ES EL ÚNICO BIEN
-              </h1>
-              <p className='text-muted-foreground mb-8 text-xl'>
-                "No son las cosas las que perturban a los hombres, sino las
-                opiniones que tienen sobre ellas."
-              </p>
-              <p className='text-muted-foreground italic'>— Epicteto</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <Hero />
 
       {/* Principles Section */}
       <section className='py-16'>
@@ -204,49 +177,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className='border-t border-stone-200 py-12 dark:border-stone-700'>
-        <div className='container mx-auto px-4'>
-          <div className='flex flex-col items-center justify-between px-4 md:flex-row'>
-            <div className='mb-6 flex items-center gap-2 md:mb-0'>
-              <Scroll className='h-5 w-5' />
-              <span className='text-lg font-medium tracking-wide'>
-                FILOSOFÍA ESTOICA
-              </span>
-            </div>
-            <nav className='mb-6 flex gap-6 md:mb-0'>
-              <Link
-                href='#'
-                className='hover:text-primary text-sm tracking-wide'
-              >
-                INICIO
-              </Link>
-              <Link
-                href='#'
-                className='hover:text-primary text-sm tracking-wide'
-              >
-                FILOSOFÍA
-              </Link>
-              <Link
-                href='#'
-                className='hover:text-primary text-sm tracking-wide'
-              >
-                PRINCIPIOS
-              </Link>
-              <Link
-                href='#'
-                className='hover:text-primary text-sm tracking-wide'
-              >
-                CONTACTO
-              </Link>
-            </nav>
-            <p className='text-muted-foreground text-sm'>
-              © {new Date().getFullYear()} Filosofía Estoica
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
