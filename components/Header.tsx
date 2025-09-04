@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Scroll, Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
@@ -10,6 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { ThemeToggle } from '@/components/theme-toggle';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -26,7 +26,7 @@ export default function Header() {
         <NavigationMenu className='hidden md:flex'>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href='#' legacyBehavior passHref>
+              <Link href='/' passHref>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} font-serif tracking-wide`}
                 >
@@ -35,7 +35,7 @@ export default function Header() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href='#' legacyBehavior passHref>
+              <Link href='#' passHref>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} font-serif tracking-wide`}
                 >
@@ -44,7 +44,7 @@ export default function Header() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href='#' legacyBehavior passHref>
+              <Link href='#' passHref>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} font-serif tracking-wide`}
                 >
@@ -53,7 +53,7 @@ export default function Header() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href='#' legacyBehavior passHref>
+              <Link href='#' passHref>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} font-serif tracking-wide`}
                 >
