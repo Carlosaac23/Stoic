@@ -1,11 +1,5 @@
-import Header from '@/components/Header';
 import QuoteSection from '@/components/QuoteSection';
 
-export default async function Home() {
-  return (
-    <main className='mx-10 my-8'>
-      <Header />
-      <QuoteSection />
-    </main>
-  );
+export default function Home() {
+  return <QuoteSection />;
 }
