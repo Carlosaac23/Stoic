@@ -20,7 +20,12 @@ export default function QuoteSection() {
     return () => clearInterval(interval);
   }, []);
 
-  if (!quote) return <p>Loading quote...</p>;
+  if (!quote)
+    return (
+      <p className='mt-6 rounded-md border border-neutral-300 p-4 text-sm shadow-sm'>
+        Loading quote...
+      </p>
+    );
 
   return (
     <section className='mt-6 rounded-md border border-neutral-300 p-4 shadow-sm'>
