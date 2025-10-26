@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ViewTransition } from 'react';
@@ -36,7 +37,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <ViewTransition>
-        <body className={`${playFair.className} antialiased`}>{children}</body>
+        <body className={`${playFair.className} antialiased`}>
+          <main className='mx-10 my-8'>
+            <Header />
+            {children}
+          </main>
+        </body>
       </ViewTransition>
     </html>
   );
