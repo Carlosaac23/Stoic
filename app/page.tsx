@@ -1,5 +1,5 @@
 import Header from '@/components/Header';
-import QuoteSection from '@/components/Quote';
+import QuoteSection from '@/components/QuoteSection';
 
 export default async function Home() {
   return (
