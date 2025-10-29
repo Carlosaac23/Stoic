@@ -1,7 +1,7 @@
 'use client';
 
-import type { Quote } from '@/lib/quotes';
-import getRandomQuote from '@/lib/quotes';
+import type { Quote } from '@/lib/get-quotes';
+import getRandomQuote from '@/lib/get-quotes';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
@@ -15,8 +15,11 @@ export default function QuoteSection() {
       setQuote(newQuote);
     }
 
+    // Fetch new quote every 25 s
+    const INTERVAL = 25000;
+
     fetchQuote();
-    const interval = setInterval(fetchQuote, 20000);
+    const interval = setInterval(fetchQuote, INTERVAL);
     return () => clearInterval(interval);
   }, []);
 
@@ -37,7 +40,7 @@ export default function QuoteSection() {
           exit={{ opacity: 0, filter: 'blur(10px)' }}
           transition={{ duration: 0.3 }}
         >
-          <p className='text-sm italic'>&quot; {quote.quote} &quot;</p>
+          <p className='text-base italic'>&quot; {quote.quote} &quot;</p>
           <p className='text-sm'>
             - <strong>{quote.author}</strong>
           </p>
