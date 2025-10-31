@@ -31,7 +31,7 @@ export default function QuoteSection() {
     );
 
   return (
-    <section className='mt-6 rounded-md border border-neutral-300 p-4 shadow-sm'>
+    <section className='max-h-28 overflow-y-auto p-4'>
       <AnimatePresence mode='wait'>
         <motion.blockquote
           key={quote.quote}
